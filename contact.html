@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | IKOO Digital</title>
+
+    <!-- SEO Meta -->
+    <meta name="description"
+        content="Contact IKOO Digital for professional SEO, social media, paid advertising, content creation, branding, and web development services. Fill the form and get a quick response.">
+    <meta name="keywords"
+        content="Contact IKOO Digital, Digital Marketing Agency, SEO Services, Social Media Marketing, Advertising Agency, Branding, Web Development, Analytics Reporting">
+    <meta name="author" content="IKOO Digital">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/ikoo-favicons.jpeg">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: teal;">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/ikoo-favicons.jpeg" alt="Ikoo Logo" width="30" height="30" class="me-2">
+                <span class="fw-bold">Ikoo Digital</span>
+            </a>
+
+            <!-- Toggler (for mobile view) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="text-white py-5" style="background-color: teal;">
+        <div class="container text-center">
+            <h1 class="fw-bold">Let’s Grow Your Brand Together</h1>
+            <p class="mt-2">Fill out the form below and our team will get back to you within 24 hours.</p>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <form id="contactForm" class="p-4 p-md-5 shadow rounded">
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Full Name *</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Email Address *</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Country</label>
+                        <input type="text" class="form-control" id="country" placeholder="Country (optional)">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Service Topic *</label>
+                        <select class="form-select" id="topic" required>
+                            <option value="" selected disabled>Select a service...</option>
+                            <option>SEO (Search Engine Optimization)</option>
+                            <option>Social Media Management</option>
+                            <option>Paid Advertising (Google & Social Ads)</option>
+                            <option>Content Creation</option>
+                            <option>Email Marketing</option>
+                            <option>Brand Identity & Strategy</option>
+                            <option>Web Development</option>
+                            <option>Analytics & Reporting</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Message *</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your project..."
+                            required></textarea>
+                    </div>
+
+                    <!-- reCAPTCHA -->
+                    <!--
+                    <div class="mb-3">
+                        <div class="g-recaptcha" data-sitekey="6LcEbw0sAAAAAMfol6gtJQ49rM98xDDOHw-WDBdy"></div>
+                    </div>
+                    -->
+
+                    <button type="submit" class="btn btn-lg w-100 text-white fw-semibold"
+                        style="background-color: teal;">Send Message</button>
+
+                    <div id="successMessage" class="success-message">
+                        Thank you! Your message has been sent successfully.
+                    </div>
+
+                    <p class="text-center mt-3 text-secondary" style="font-size: 0.9rem;">
+                        We typically respond within 24–48 hours.
+                    </p>
+                </form>
+                <div id="successMessage">Your message has been sent successfully!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="py-5" style="background-color: #f4f4f4;">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Contact Information</h3>
+                    <p><strong>Email:</strong> info@ikoodigital.com</p>
+                    <p><strong>Phone:</strong> <a href="tel:+2349028441668" class="text-decoration-none">
+                            +234 902 844 1668
+                        </a></p>
+                    <p><strong>Location:</strong> Ibadan, Nigeria</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Connect With Us</h3>
+                    <p><a href="https://www.instagram.com/ikoodigital/" class="text-decoration-none">Instagram</a></p>
+                    <p><a href="https://www.facebook.com/share/1Gfi2Peqbi/" class="text-decoration-none">Facebook</a>
+                    </p>
+                    <p><a href="https://vm.tiktok.com/ZSH3qpnJVCE6F-6LSBs/" class="text-decoration-none">TikTok</a></p>
+                    <p><a href="https://wa.me/message/4QA4BC6ZSDVZH1" class="text-decoration-none">Whatsapp</a></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center py-5">
+        <h2 class="fw-bold">Ready to start your project?</h2>
+        <a href="contact.html" class="btn btn-lg mt-3 text-white fw-semibold" style="background-color: teal;">
+            Get a Free Consultation
+        </a>
+    </section>
+
+    <!-- JS Scripts -->
+    <script>
+        // Initialize EmailJS
+        emailjs.init("XV4HKddSR5ZS_3hNk");
+
+        // Form Submit Handler
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Skip reCAPTCHA check on localhost
+            const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
+            if (!isLocal && grecaptcha.getResponse() === "") {
+                alert("Please complete the reCAPTCHA.");
+                return;
+            }
+
+            // Prepare form data
+            const templateParams = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                country: document.getElementById('country').value,
+                topic: document.getElementById('topic').value,
+                message: document.getElementById('message').value
+            };
+
+            emailjs.send("service_e8qwmw2", "template_loq0onh", templateParams)
+                .then(function () {
+                    const msg = document.getElementById('successMessage');
+                    msg.style.display = 'block';
+                    msg.style.opacity = 1;
+                    msg.style.transform = 'translateY(0)';
+
+                    document.getElementById('contactForm').reset();
+                    if (!isLocal) grecaptcha.reset();
+
+                    setTimeout(() => {
+                        msg.style.opacity = 0;
+                        msg.style.transform = 'translateY(-20px)';
+                    }, 3000);
+                }, function (error) {
+                    alert("Oops! Something went wrong. Please try again.");
+                    console.log(error);
+                });
+        });
+
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-white py-5 mt-5 border-top">
+        <div class="container text-center">
+            <!-- Navigation links -->
+            <ul class="nav justify-content-center mb-4">
+                <li class="nav-item"><a class="nav-link text-dark px-3" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-dark px-3" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link text-dark px-3" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link text-dark px-3" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link text-dark px-3" href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Optional social icons -->
+            <ul class="nav justify-content-center mb-3">
+                <li class="nav-item ms-3"><a class="text-dark" href="https://www.instagram.com/ikoodigital/"
+                        aria-label="Instagram"><img src="favicons/instagram.svg" alt="iko digital instagram"
+                            height="30"></a></li>
+                <li class="nav-item ms-3"><a class="text-dark" href="https://www.facebook.com/share/1Gfi2Peqbi/"
+                        aria-label="Facebook"><img src="favicons/facebook.svg" alt="iko digital facebook"
+                            height="30"></a></li>
+                <li class="nav-item ms-3"><a class="text-dark" href="https://vm.tiktok.com/ZSH3qpnJVCE6F-6LSBs/"
+                        aria-label="TikTok"><img src="favicons/tiktok.svg" alt="iko digital tiktok" height="30"></a>
+                </li>
+                <li class="nav-item ms-3"><a class="text-dark" href="https://wa.me/message/4QA4BC6ZSDVZH1"
+                        aria-label="Whatsapp"><img src="favicons/whatsapp.svg" alt="iko digital Whatsapp"
+                            height="30"></a></li>
+            </ul>
+
+            <!-- Footer copyright -->
+            <p class="text-secondary mb-0">© 2025 Ikoo Digital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
