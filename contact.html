@@ -165,16 +165,22 @@
         document.getElementById('contactForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
+            const successMsg = document.getElementById("successMessage");
+
             emailjs.sendForm("service_e8qwmw2", "template_loq0onh", this)
                 .then(() => {
-                    document.getElementById("successMessage").style.display = "block";
-                    this.reset();
+                    successMsg.style.display = "block";          // show message
+                    this.reset();                                // clear form
+                    setTimeout(() => {                           // hide message after 5s
+                        successMsg.style.display = "none";
+                    }, 5000);
                 })
                 .catch((err) => {
                     alert("Something went wrong. Please try again.");
                     console.log(err);
                 });
         });
+
     </script>
 
     <!-- Bootstrap JS -->
