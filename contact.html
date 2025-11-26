@@ -17,6 +17,11 @@
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+    <!-- Initialize EmailJS -->
+    <script>
+        emailjs.init("XV4HKddSR5ZS_3hNk");
+    </script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="stylesheet.css">
 </head>
@@ -61,33 +66,29 @@
             <div class="col-lg-8">
 
                 <!-- NETLIFY + EMAILJS FORM -->
-                <form id="contactForm" name="contact" method="POST" data-netlify="true"
+                <form id="contact-form" name="contact" method="POST" data-netlify="true"
                     class="p-4 p-md-5 shadow rounded">
 
                     <input type="hidden" name="form-name" value="contact">
 
-
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Full Name *</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter your full name"
-                            required>
+                        <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Email Address *</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email"
-                            required>
+                        <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Country</label>
-                        <input type="text" class="form-control" name="country" id="country"
-                            placeholder="Country (optional)">
+                        <input type="text" class="form-control" name="country" placeholder="Country (optional)">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Service Topic *</label>
-                        <select class="form-select" name="topic" id="topic" required>
+                        <select class="form-select" name="topic" required>
                             <option value="" selected disabled>Select a service...</option>
                             <option>SEO (Search Engine Optimization)</option>
                             <option>Social Media Management</option>
@@ -103,16 +104,17 @@
 
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Message *</label>
-                        <textarea class="form-control" name="message" id="message" rows="5"
+                        <textarea class="form-control" name="message" rows="5"
                             placeholder="Tell us about your project..." required></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-lg w-100 text-white fw-semibold"
-                        style="background-color: teal;">Send Message</button>
+                    <!-- alert box -->
+                    <div id="form-alert" class="alert mt-3" style="display: none;"></div>
 
-                    <div id="successMessage" class="text-success mt-3 fw-semibold" style="display:none;">
-                        Thank you! Your message has been sent successfully.
-                    </div>
+                    <button id="send-btn" type="submit" class="btn btn-lg w-100 text-white fw-semibold"
+                        style="background-color: teal;">
+                        Send Message
+                    </button>
 
                     <p class="text-center mt-3 text-secondary" style="font-size: 0.9rem;">
                         We typically respond within 24–48 hours.
@@ -131,8 +133,8 @@
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-3">Contact Information</h3>
                     <p><strong>Email:</strong> info@ikoodigital.com</p>
-                    <p><strong>Phone:</strong> <a href="tel:+2349028441668" class="text-decoration-none">
-                            +234 902 844 1668</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+2349028441668" class="text-decoration-none">+234 902 844
+                            1668</a></p>
                     <p><strong>Location:</strong> Ibadan, Nigeria</p>
                 </div>
 
@@ -157,30 +159,41 @@
         </a>
     </section>
 
-    <!-- EMAILJS SCRIPT -->
+    <!-- NEW EMAILJS FORM HANDLING -->
     <script>
-        // Initialize EmailJS
-        emailjs.init("XV4HKddSR5ZS_3hNk");
+        const form = document.getElementById('contact-form');
+        const sendBtn = document.getElementById('send-btn');
+        const alertBox = document.getElementById('form-alert');
 
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
+        const EMAILJS_SERVICE_ID = 'service_e8qwmw2';
+        const EMAILJS_TEMPLATE_ID = 'template_loq0onh';
 
-            const successMsg = document.getElementById("successMessage");
+        function showAlert(message, type = 'success') {
+            alertBox.style.display = 'block';
+            alertBox.className = '';
+            alertBox.classList.add('alert');
+            alertBox.classList.add(type === 'success' ? 'alert-success' : 'alert-danger');
+            alertBox.innerText = message;
+            setTimeout(() => { alertBox.style.display = 'none'; }, 6000);
+        }
 
-            emailjs.sendForm("service_e8qwmw2", "template_loq0onh", this)
-                .then(() => {
-                    successMsg.style.display = "block";          // show message
-                    this.reset();                                // clear form
-                    setTimeout(() => {                           // hide message after 5s
-                        successMsg.style.display = "none";
-                    }, 5000);
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            sendBtn.disabled = true;
+            sendBtn.innerText = 'Sending...';
+
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+                .then(response => {
+                    showAlert('Message sent successfully. Thank you!', 'success');
+                    form.reset();
+                }, error => {
+                    showAlert('Failed to send message. Please try again later.', 'error');
                 })
-                .catch((err) => {
-                    alert("Something went wrong. Please try again.");
-                    console.log(err);
+                .finally(() => {
+                    sendBtn.disabled = false;
+                    sendBtn.innerText = 'Send Message';
                 });
         });
-
     </script>
 
     <!-- Bootstrap JS -->
