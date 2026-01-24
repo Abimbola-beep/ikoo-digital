@@ -1,204 +1,306 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | IKOO Digital</title>
 
-    <meta name="description"
-        content="Contact IKOO Digital for professional SEO, social media, paid advertising, content creation, branding, and web development services. Fill the form and get a quick response.">
+    <meta
+      name="description"
+      content="Contact IKOO Digital for professional SEO, social media, paid advertising, content creation, branding, and web development services. Fill the form and get a quick response."
+    />
 
-    <link rel="icon" type="image/png" href="images/ikoo-favicons.jpeg">
+    <link rel="icon" type="image/png" href="images/ikoo-favicons.jpeg" />
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!-- Initialize EmailJS -->
     <script>
-        emailjs.init("XV4HKddSR5ZS_3hNk");
+      emailjs.init("XV4HKddSR5ZS_3hNk");
     </script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="stylesheet.css">
-</head>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: teal;">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/ikoo-favicons.jpeg" alt="Ikoo Logo" width="30" height="30" class="me-2">
-                <span class="fw-bold">Ikoo Digital</span>
-            </a>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark sticky-top"
+      style="background-color: teal"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="images/ikoo-favicons.jpeg"
+            alt="Ikoo Logo"
+            width="30"
+            height="30"
+            class="me-2"
+          />
+          <span class="fw-bold">Ikoo Digital</span>
+        </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Hero -->
-    <header class="text-white py-5" style="background-color: teal;">
-        <div class="container text-center">
-            <h1 class="fw-bold">Let’s Grow Your Brand Together</h1>
-            <p class="mt-2">Fill out the form below and our team will get back to you within 24 hours.</p>
-        </div>
+    <header class="text-white py-5" style="background-color: teal">
+      <div class="container text-center">
+        <h1 class="fw-bold">Let’s Grow Your Brand Together</h1>
+        <p class="mt-2">
+          Fill out the form below and our team will get back to you within 24
+          hours.
+        </p>
+      </div>
     </header>
 
     <!-- Contact Form Section -->
     <section class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <!-- NETLIFY + EMAILJS FORM -->
+          <form
+            id="contact-form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            class="p-4 p-md-5 shadow rounded"
+          >
+            <input type="hidden" name="form-name" value="contact" />
 
-                <!-- NETLIFY + EMAILJS FORM -->
-                <form id="contact-form" name="contact" method="POST" data-netlify="true"
-                    class="p-4 p-md-5 shadow rounded">
-
-                    <input type="hidden" name="form-name" value="contact">
-
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Full Name *</label>
-                        <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Email Address *</label>
-                        <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Country</label>
-                        <input type="text" class="form-control" name="country" placeholder="Country (optional)">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Service Topic *</label>
-                        <select class="form-select" name="topic" required>
-                            <option value="" selected disabled>Select a service...</option>
-                            <option>SEO (Search Engine Optimization)</option>
-                            <option>Social Media Management</option>
-                            <option>Paid Advertising (Google & Social Ads)</option>
-                            <option>Content Creation</option>
-                            <option>Email Marketing</option>
-                            <option>Brand Identity & Strategy</option>
-                            <option>Web Development</option>
-                            <option>Analytics & Reporting</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Message *</label>
-                        <textarea class="form-control" name="message" rows="5"
-                            placeholder="Tell us about your project..." required></textarea>
-                    </div>
-
-                    <!-- alert box -->
-                    <div id="form-alert" class="alert mt-3" style="display: none;"></div>
-
-                    <button id="send-btn" type="submit" class="btn btn-lg w-100 text-white fw-semibold"
-                        style="background-color: teal;">
-                        Send Message
-                    </button>
-
-                    <p class="text-center mt-3 text-secondary" style="font-size: 0.9rem;">
-                        We typically respond within 24–48 hours.
-                    </p>
-                </form>
-
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Full Name *</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                placeholder="Enter your full name"
+                required
+              />
             </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Email Address *</label>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Country</label>
+              <input
+                type="text"
+                class="form-control"
+                name="country"
+                placeholder="Country (optional)"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Service Topic *</label>
+              <select class="form-select" name="topic" required>
+                <option value="" selected disabled>Select a service...</option>
+                <option>SEO (Search Engine Optimization)</option>
+                <option>Social Media Management</option>
+                <option>Paid Advertising (Google & Social Ads)</option>
+                <option>Content Creation</option>
+                <option>Email Marketing</option>
+                <option>Brand Identity & Strategy</option>
+                <option>Web Development</option>
+                <option>Analytics & Reporting</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Message *</label>
+              <textarea
+                class="form-control"
+                name="message"
+                rows="5"
+                placeholder="Tell us about your project..."
+                required
+              ></textarea>
+            </div>
+
+            <!-- alert box -->
+            <div id="form-alert" class="alert mt-3" style="display: none"></div>
+
+            <button
+              id="send-btn"
+              type="submit"
+              class="btn btn-lg w-100 text-white fw-semibold"
+              style="background-color: teal"
+            >
+              Send Message
+            </button>
+
+            <p
+              class="text-center mt-3 text-secondary"
+              style="font-size: 0.9rem"
+            >
+              We typically respond within 24–48 hours.
+            </p>
+          </form>
         </div>
+      </div>
     </section>
 
     <!-- Contact Info Section -->
-    <section class="py-5" style="background-color: #f4f4f4;">
-        <div class="container">
-            <div class="row g-4">
+    <section class="py-5" style="background-color: #f4f4f4">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <h3 class="fw-bold mb-3">Contact Information</h3>
+            <p><strong>Email:</strong> abimbolabolaifalana@gmail.com</p>
+            <p>
+              <strong>Phone:</strong>
+              <a href="tel:+2349074248887" class="text-decoration-none"
+                >+234 907 424 8887</a
+              >
+            </p>
+            <p><strong>Location:</strong> Ibadan, Nigeria</p>
+          </div>
 
-                <div class="col-md-6">
-                    <h3 class="fw-bold mb-3">Contact Information</h3>
-                    <p><strong>Email:</strong> info@ikoodigital.com</p>
-                    <p><strong>Phone:</strong> <a href="tel:+2349028441668" class="text-decoration-none">+234 902 844
-                            1668</a></p>
-                    <p><strong>Location:</strong> Ibadan, Nigeria</p>
-                </div>
-
-                <div class="col-md-6">
-                    <h3 class="fw-bold mb-3">Connect With Us</h3>
-                    <p><a href="https://www.instagram.com/ikoodigital/" class="text-decoration-none">Instagram</a></p>
-                    <p><a href="https://www.facebook.com/share/16kJB1s4xu/" class="text-decoration-none">Facebook</a>
-                    </p>
-                    <p><a href="https://vm.tiktok.com/ZSH3qpnJVCE6F-6LSBs/" class="text-decoration-none">TikTok</a></p>
-                    <p><a href="https://wa.me/message/4QA4BC6ZSDVZH1" class="text-decoration-none">Whatsapp</a></p>
-                </div>
-
-            </div>
+          <div class="col-md-6">
+            <h3 class="fw-bold mb-3">Connect With Us</h3>
+            <p>
+              <a
+                href="https://www.instagram.com/ikoodigital/"
+                class="text-decoration-none"
+                >Instagram</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://www.facebook.com/share/16kJB1s4xu/"
+                class="text-decoration-none"
+                >Facebook</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://vm.tiktok.com/ZSH3qpnJVCE6F-6LSBs/"
+                class="text-decoration-none"
+                >TikTok</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://wa.me/message/4QA4BC6ZSDVZH1"
+                class="text-decoration-none"
+                >Whatsapp</a
+              >
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- CTA -->
     <section class="text-center py-5">
-        <h2 class="fw-bold">Ready to start your project?</h2>
-        <a href="contact.html" class="btn btn-lg mt-3 text-white fw-semibold" style="background-color: teal;">
-            Get a Free Consultation
-        </a>
+      <h2 class="fw-bold">Ready to start your project?</h2>
+      <a
+        href="contact.html"
+        class="btn btn-lg mt-3 text-white fw-semibold"
+        style="background-color: teal"
+      >
+        Get a Free Consultation
+      </a>
     </section>
 
     <!-- NEW EMAILJS FORM HANDLING -->
     <script>
-        const form = document.getElementById('contact-form');
-        const sendBtn = document.getElementById('send-btn');
-        const alertBox = document.getElementById('form-alert');
+      const form = document.getElementById("contact-form");
+      const sendBtn = document.getElementById("send-btn");
+      const alertBox = document.getElementById("form-alert");
 
-        const EMAILJS_SERVICE_ID = 'service_e8qwmw2';
-        const EMAILJS_TEMPLATE_ID = 'template_loq0onh';
+      const EMAILJS_SERVICE_ID = "service_e8qwmw2";
+      const EMAILJS_TEMPLATE_ID = "template_loq0onh";
 
-        function showAlert(message, type = 'success') {
-            alertBox.style.display = 'block';
-            alertBox.className = '';
-            alertBox.classList.add('alert');
-            alertBox.classList.add(type === 'success' ? 'alert-success' : 'alert-danger');
-            alertBox.innerText = message;
-            setTimeout(() => { alertBox.style.display = 'none'; }, 6000);
-        }
+      function showAlert(message, type = "success") {
+        alertBox.style.display = "block";
+        alertBox.className = "";
+        alertBox.classList.add("alert");
+        alertBox.classList.add(
+          type === "success" ? "alert-success" : "alert-danger",
+        );
+        alertBox.innerText = message;
+        setTimeout(() => {
+          alertBox.style.display = "none";
+        }, 6000);
+      }
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            sendBtn.disabled = true;
-            sendBtn.innerText = 'Sending...';
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        sendBtn.disabled = true;
+        sendBtn.innerText = "Sending...";
 
-            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
-                .then(response => {
-                    showAlert('Message sent successfully. Thank you!', 'success');
-                    form.reset();
-                }, error => {
-                    showAlert('Failed to send message. Please try again later.', 'error');
-                })
-                .finally(() => {
-                    sendBtn.disabled = false;
-                    sendBtn.innerText = 'Send Message';
-                });
-        });
+        emailjs
+          .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+          .then(
+            (response) => {
+              showAlert("Message sent successfully. Thank you!", "success");
+              form.reset();
+            },
+            (error) => {
+              showAlert(
+                "Failed to send message. Please try again later.",
+                "error",
+              );
+            },
+          )
+          .finally(() => {
+            sendBtn.disabled = false;
+            sendBtn.innerText = "Send Message";
+          });
+      });
     </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
+  </body>
 </html>
