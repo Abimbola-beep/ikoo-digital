@@ -115,19 +115,12 @@
     </nav>
 
     <div class="px-4 py-5 my-5 text-center">
-      <img
-        class="d-block mx-auto mb-4"
-        src="images/ikoo-fevicon.jpeg"
-        alt=""
-        width="95"
-        height="80"
-      />
       <h1 class="display-5 fw-bold text-body-emphasis">We Make Brands Echo.</h1>
       <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">
-          From social media management to SEO and digital advertising, we create
-          strategies that boost your brand.
-        </p>
+        <h2 class="hero-typing">
+          <span id="typingText"></span><span class="cursor">|</span>
+        </h2>
+        <p class="hero-subtitle">we create strategies that boost your brand.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <a href="contact.html"
             ><button
@@ -237,6 +230,23 @@
         </div>
       </div>
     </div>
+
+    <section class="news-section">
+      <div class="ticker-wrapper">
+        <div class="ticker">
+          <span>
+            🚀 NEW: Website Launch Packages Available • 🎯 Social Media
+            Management Offer • 💡 Branding Strategy Consultation • 🔥 20%
+            Discount This Month •
+          </span>
+          <span>
+            🚀 NEW: Website Launch Packages Available • 🎯 Social Media
+            Management Offer • 💡 Branding Strategy Consultation • 🔥 20%
+            Discount This Month •
+          </span>
+        </div>
+      </div>
+    </section>
 
     <!-- Divider -->
     <hr class="my-3" />
@@ -431,7 +441,7 @@
           <li class="nav-item ms-3">
             <a
               class="text-dark"
-              href="https://www.facebook.com/share/1Gfi2Peqbi/"
+              href="https://facebook.com/ikoodigitalservices"
               aria-label="Facebook"
               ><img
                 src="favicons/facebook.svg"
@@ -473,7 +483,23 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 
+    <script src="typing.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const ticker = document.querySelector(".ticker");
+
+      let isPaused = false;
+
+      ticker.addEventListener("click", () => {
+        if (isPaused) {
+          ticker.style.animationPlayState = "running";
+          isPaused = false;
+        } else {
+          ticker.style.animationPlayState = "paused";
+          isPaused = true;
+        }
+      });
+    </script>
   </body>
 </html>
